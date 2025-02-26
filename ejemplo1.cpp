@@ -44,9 +44,11 @@ int main(){
     long suma1 = 0,suma2 = 0;
     thread t1([&suma1](){suma1 = suma(0, SIZE/2);});
     thread t2([&suma2](){suma2 = suma(SIZE / 2, SIZE);});
+    
 
     t1.join();
     t2.join();
+    
     auto llega = chrono::system_clock::now();
     auto dur = duration_cast<milliseconds>(llega - partida);
     printf("el resultado de la suma con dos hilos es: %ld\n", suma1 + suma2);

@@ -1,4 +1,9 @@
 inicio:
-	g++ -o exe ejemplo1.cpp -lpthread
+	g++ -o exe hilostbb.cpp -ltbb
+	./exe
+	rm exe
+
+hilos:
+	g++ -o exe 
 	./exe
 	rm exe
